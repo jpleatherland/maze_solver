@@ -1,13 +1,12 @@
 from window import Window
 from maze_structure import (
-    Point, 
-    Line
+    Maze
 )
     
-win = Window(800, 600) 
-point1 = Point(0, 0)
-point2 = Point(400, 300)
-new_line = Line(point1, point2)
-win.draw_line(new_line, "black")
-win.redraw()
+win = Window(1920, 1080) 
+maze = Maze(100, 100, 15, 30, 50, 50, win)
+maze.break_entrance_and_exit()
+maze.break_walls_r(0,0)
+maze.reset_visited()
+maze.solve(0,0)
 win.wait_for_close()

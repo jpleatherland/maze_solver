@@ -6,8 +6,8 @@ class Window(object):
         self.height = height
         self.root = Tk()    
         self.root.title("Title")
-        self.canvas = Canvas()
-        self.canvas.pack()
+        self.canvas = Canvas(self.root, bg="white", height=height, width=width)
+        self.canvas.pack(fill=BOTH, expand=1)
         self.running = False
 
     def redraw(self):
